@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.esgi.steamstorereactive.R
 import com.esgi.steamstorereactive.model.GameInfo
 import com.esgi.steamstorereactive.recyclerview.holder.GameViewHolder
-import com.esgi.steamstorereactive.recyclerview.holder.OnGameListener
+import com.esgi.steamstorereactive.recyclerview.OnGameListener
 
 
 class GameListAdapter(val items: List<GameInfo>, private val listener: OnGameListener) : RecyclerView.Adapter<GameViewHolder>() {

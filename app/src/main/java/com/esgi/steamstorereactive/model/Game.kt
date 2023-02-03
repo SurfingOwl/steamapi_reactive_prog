@@ -45,6 +45,10 @@ data class Price(
     val final_formatted: String?,
 )
 
+data class GameIds(
+    val ids: List<String>?
+)
+
 data class ReviewResponse(
     val success: Int,
     val reviews: List<Review>,

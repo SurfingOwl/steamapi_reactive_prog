@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -21,7 +22,7 @@ import com.esgi.steamstorereactive.model.GameInfo
 import com.esgi.steamstorereactive.model.GameRank
 import com.esgi.steamstorereactive.model.GameSearchTransfer
 import com.esgi.steamstorereactive.recyclerview.adapter.GameListAdapter
-import com.esgi.steamstorereactive.recyclerview.holder.OnGameListener
+import com.esgi.steamstorereactive.recyclerview.OnGameListener
 import kotlinx.coroutines.*
 import java.io.IOException
 
@@ -50,6 +51,8 @@ class HomeFragment : Fragment() {
         val forwardGameButton = view.findViewById<Button>(R.id.forward_game_button)
         val gameList = view.findViewById<RecyclerView>(R.id.best_seller_list)
         val searchBar = view.findViewById<EditText>(R.id.search_bar)
+
+        val loader = view.findViewById<ProgressBar>(R.id.pgbar)
 
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
             try {

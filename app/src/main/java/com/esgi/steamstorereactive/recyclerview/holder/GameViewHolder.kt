@@ -31,7 +31,3 @@ class GameViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         }
     }
 }
-
-interface OnGameListener {
-    fun onClicked(game: GameInfo, position: Int)
-}

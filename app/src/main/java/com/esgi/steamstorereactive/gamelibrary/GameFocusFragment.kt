@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -49,12 +50,15 @@ class GameFocusFragment : Fragment() {
 
         val ids: GameFocusTransfer = arguments?.get("gameFocusIds") as GameFocusTransfer
 
+        val loader = view.findViewById<ProgressBar>(R.id.pgbar)
+
         val tabDescription = view.findViewById<Button>(R.id.description_tab)
         val tabReview = view.findViewById<Button>(R.id.reviews_tab)
         val gameReviews = view.findViewById<RecyclerView>(R.id.game_reviews)
         val gameDescription = view.findViewById<TextView>(R.id.game_description)
 
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
+            loader.visibility = View.VISIBLE
             try {
                 val gameInfo = getGameInfo(ids.gameid)
                 val reviewList = getReviews(ids.gameid)
@@ -65,6 +69,7 @@ class GameFocusFragment : Fragment() {
                     layoutManager = LinearLayoutManager(view.context)
                     adapter = ReviewListAdapter(reviewList.reviews)
                 }
+                loader.visibility = View.GONE
             } catch (e: IOException) {
                 Log.e("FOCUS_ERR/ ", e.toString())
             }

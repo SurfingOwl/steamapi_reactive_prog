@@ -20,7 +20,7 @@ import com.esgi.steamstorereactive.R
 import com.esgi.steamstorereactive.http.NetworkRequest
 import com.esgi.steamstorereactive.model.*
 import com.esgi.steamstorereactive.recyclerview.adapter.GameListAdapter
-import com.esgi.steamstorereactive.recyclerview.holder.OnGameListener
+import com.esgi.steamstorereactive.recyclerview.OnGameListener
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
