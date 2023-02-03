@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/background_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/game_focus">
+
+        <ImageView
+            android:id="@+id/game_display_image"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/game_card"
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:layout_marginHorizontal="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/game_card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/game_card_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/game_thumbnail"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:background="@color/background_dark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/game_card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="25dp"
+                android:fontFamily="@font/proxima_nova"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/game_thumbnail"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/publisher_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/proxima_nova"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/game_thumbnail"
+                app:layout_constraintTop_toBottomOf="@+id/game_card_title"
+                tools:layout_editor_absoluteY="18dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/game_card">
+
+            <Button
+                android:id="@+id/description_tab"
+                android:layout_width="197dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/left_selected_tab"
+                android:text="@string/description" />
+
+            <Button
+                android:id="@+id/reviews_tab"
+                android:layout_width="197dp"
+                android:background="@drawable/right_unselected_tab"
+                android:layout_height="wrap_content"
+                android:text="@string/avis" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tabs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/game_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/game_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

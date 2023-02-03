@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">SteamStoreReactive</string>
+
+    <string name="show_details">En savoir plus</string>
+    <string name="price">Prix : </string>
+
+    <string name="bienvenue">Bienvenue !</string>
+    <string name="bienvenue_content">Veuillez vous connecter ou\ncréer un nouveau compte\npour utiliser l\'application.</string>
+    <string name="email">E-mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="connect">Se connecter</string>
+    <string name="signup">Créer un nouveau compte</string>
+    <string name="forgotten_password">Mot de passe oublié</string>
+
+    <string name="forgot_title">Mot de passe oublié</string>
+    <string name="forgot_subtitle">Veuillez saisir votre email\nafin de réinitialiserr votre mot de passe</string>
+    <string name="send_back_email">Générer un nouveau mot de passe</string>
+
+    <string name="signup_title">Inscription</string>
+    <string name="signup_subtitle">Veuillez saisir ces différentes informations,\nafin que vos listes soient sauvegardées</string>
+    <string name="signup_user">Nom d\'utilisateur</string>
+    <string name="verify_password">Vérification du mot de passe</string>
+
+    <string name="no_likes">Vous n\'avez encore pas liké de contenu.\nCliquez sur le coeur pour en rajouter.</string>
+    <string name="no_wish">Vous n\'avez encore pas liké de contenu.\nCliquez sur l\'étoile pour en rajouter.</string>
+
+    <string name="search">Rechercher un jeu....</string>
+    <string name="home_game_title">Titan Fall 2\nUltimate Edition</string>
+    <string name="home_game_description">Titanfall 2 est un jeu vidéo de tir en vue à la première personne développé par Respawn Entertainment et édité par Electronic Arts.</string>
+    <string name="best_selling">Les meilleurs ventes</string>
+
+    <string name="result_number">Nombre de résultats : </string>
+
+    <string name="description">DESCRIPTION</string>
+    <string name="avis">AVIS</string>
+</resources>

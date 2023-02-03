@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/background_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/empty_likes"
+        android:background="@color/background_dark">
+
+        <ImageView
+            android:id="@+id/no_likes_svg"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:src="@drawable/empty_likes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/no_likes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:fontFamily="@font/googlesansregular"
+            android:text="@string/no_likes"
+            android:lineSpacingExtra="8sp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_likes_svg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/likes"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+</androidx.cardview.widget.CardView>

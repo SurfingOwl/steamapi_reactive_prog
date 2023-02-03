@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/homeFragment"
+        android:name="com.esgi.steamstorereactive.gamelibrary.HomeFragment"
+        android:label="homeFragment"
+        tools:layout="@layout/home_view">
+        <action
+            android:id="@+id/action_homeFragment_to_wishlistFragment"
+            app:destination="@id/wishlistFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_likesFragment"
+            app:destination="@id/likesFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment">
+            <argument
+                android:name="gameSearchTransfer"
+                app:argType="com.esgi.steamstorereactive.model.GameSearchTransfer"
+                app:nullable="false"
+                />
+        </action>
+        <action
+            android:id="@+id/action_homeFragment_to_gameFocusFragment"
+            app:destination="@id/gameFocusFragment">
+            <argument
+                android:name="gameFocusIds"
+                app:argType="com.esgi.steamstorereactive.model.GameFocusTransfer"
+                app:nullable="false"
+                />
+        </action>
+    </fragment>
+    <fragment android:id="@+id/searchFragment"
+        android:name="com.esgi.steamstorereactive.gamelibrary.SearchFragment"
+        android:label="searchFragment"
+        tools:layout="@layout/search_view">
+        <action
+            android:id="@+id/action_searchFragment_to_gameFocusFragment"
+            app:destination="@id/gameFocusFragment">
+            <argument
+                android:name="gameFocusIds"
+                app:argType="com.esgi.steamstorereactive.model.GameFocusTransfer"
+                app:nullable="false"
+                />
+        </action>
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@+id/homeFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment android:id="@+id/gameFocusFragment"
+        android:name="com.esgi.steamstorereactive.gamelibrary.GameFocusFragment"
+        android:label="gameFocusFragment"
+        tools:layout="@layout/game_focus_view">
+        <action
+            android:id="@+id/action_gameFocusFragment_to_homeFragment"
+            app:destination="@id/homeFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment android:id="@+id/loginFragment"
+        android:name="com.esgi.steamstorereactive.signin.LoginFragment"
+        android:label="loginFragment"
+        tools:layout="@layout/login_view">
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment">
+            <argument
+                android:name="email"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment">
+            <argument
+                android:name="credentials"
+                app:nullable="true"
+                app:argType="com.esgi.steamstorereactive.model.CredentialsTransfer" />
+        </action>
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment android:id="@+id/forgotPasswordFragment"
+        android:name="com.esgi.steamstorereactive.signin.ForgotPasswordFragment"
+        android:label="forgotPasswordFragment"
+        tools:layout="@layout/password_forgotten_view">
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment android:id="@+id/signupFragment"
+        android:name="com.esgi.steamstorereactive.signin.SignupFragment"
+        android:label="signupFragment"
+        tools:layout="@layout/signup_view">
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_homeFragment"
+            app:destination="@id/homeFragment">
+            <argument
+                android:name="userid"
+                app:nullable="true"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment android:id="@+id/likesFragment"
+        android:name="com.esgi.steamstorereactive.gamelibrary.LikesFragment"
+        android:label="likesFragment"
+        tools:layout="@layout/likes_view">
+        <action
+            android:id="@+id/action_likesFragment_to_gameFocusFragment"
+            app:destination="@id/gameFocusFragment">
+            <argument
+                android:name="gameFocusIds"
+                app:argType="com.esgi.steamstorereactive.model.GameFocusTransfer"
+                app:nullable="false"
+                />
+        </action>
+        <action
+            android:id="@+id/action_likesFragment_to_homeFragment"
+            app:destination="@id/homeFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+    <fragment android:id="@+id/wishlistFragment"
+        android:name="com.esgi.steamstorereactive.gamelibrary.WishlistFragment"
+        android:label="wishlistFragment"
+        tools:layout="@layout/wishlist_view">
+        <action
+            android:id="@+id/action_wishlistFragment_to_gameFocusFragment"
+            app:destination="@id/gameFocusFragment">
+            <argument
+                android:name="gameFocusIds"
+                app:argType="com.esgi.steamstorereactive.model.GameFocusTransfer"
+                app:nullable="false"/>
+        </action>
+        <action
+            android:id="@+id/action_wishlistFragment_to_homeFragment"
+            app:destination="@id/homeFragment">
+            <argument
+                android:name="userid"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+</navigation>
