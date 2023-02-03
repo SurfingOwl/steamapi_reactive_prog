@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -42,6 +43,10 @@ class SearchFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val actionbar = (requireActivity() as AppCompatActivity).supportActionBar
+        actionbar?.show()
+        actionbar?.title = "Search"
 
         val args: GameSearchTransfer = arguments?.get("gameSearchTransfer") as GameSearchTransfer
         val userid: String = args.userid

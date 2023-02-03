@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +41,11 @@ class GameFocusFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val actionbar = (requireActivity() as AppCompatActivity).supportActionBar
+        actionbar?.show()
+        actionbar?.title = "Détails du jeu"
+        actionbar?.setDisplayHomeAsUpEnabled(true)
 
         val ids: GameFocusTransfer = arguments?.get("gameFocusIds") as GameFocusTransfer
 

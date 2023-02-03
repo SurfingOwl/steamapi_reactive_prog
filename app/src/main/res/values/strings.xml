@@ -33,4 +33,9 @@
 
     <string name="description">DESCRIPTION</string>
     <string name="avis">AVIS</string>
+
+    <string name="back">back</string>
+    <string name="close">close</string>
+    <string name="wish">wish</string>
+    <string name="like">like</string>
 </resources>

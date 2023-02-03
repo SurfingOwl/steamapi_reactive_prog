@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.esgi.steamstorereactive.R
 import com.esgi.steamstorereactive.http.NetworkRequest
@@ -30,6 +31,8 @@ class ForgotPasswordFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
         val email = view.findViewById<EditText>(R.id.email_input)
         val send = view.findViewById<Button>(R.id.connect)

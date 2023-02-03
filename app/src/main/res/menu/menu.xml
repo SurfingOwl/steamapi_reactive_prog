@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/back"
+        android:title="@string/description"
+        android:icon="@drawable/back"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/close"
+        android:title="@string/close"
+        android:icon="@drawable/close"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/like"
+        android:title="@string/like"
+        android:icon="@drawable/like"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/wish"
+        android:title="@string/wish"
+        android:icon="@drawable/whishlist"
+        app:showAsAction="always"/>
+
+</menu>

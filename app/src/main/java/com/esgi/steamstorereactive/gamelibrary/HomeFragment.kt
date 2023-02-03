@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -40,6 +41,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val actionbar = (requireActivity() as AppCompatActivity).supportActionBar
+        actionbar?.show()
+        actionbar?.title = "Home"
 
         val userid: String = arguments?.get("userid").toString()
         val forwardGameButton = view.findViewById<Button>(R.id.forward_game_button)
